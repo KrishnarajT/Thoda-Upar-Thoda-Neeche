@@ -4,6 +4,245 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDE7F6"
     tools:context=".InsaneGame">
+
+    <TextView
+        android:id="@+id/tvGoalPercentage3_hard4"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="380dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#D44588"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGoalPercentage3_hard5"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#26A69A"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserPercentage2_hard"
+        android:layout_width="135dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#283593"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2_Hard" />
+
+    <TextView
+        android:id="@+id/tvTimeLeftLabel2"
+        android:layout_width="231dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="Time Left"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#3949AB"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGoalPercentage2_hard"
+        android:layout_width="138dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="144dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#283593"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar3_Hard"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="152dp"
+        android:rotation="270"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeLeft_hard" />
+
+    <TextView
+        android:id="@+id/tvUserPercentage3_hard"
+        android:layout_width="140dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#EF6C00"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserPercentage2_hard" />
+
+    <TextView
+        android:id="@+id/tvUserPercentage3_hard4"
+        android:layout_width="140dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#D44588"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserPercentage3_hard5"
+        android:layout_width="140dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="380dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#26A69A"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserPercentage1_hard"
+        android:layout_width="127dp"
+        android:layout_height="41dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2E7D32"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar1_Hard" />
+
+    <SeekBar
+        android:id="@+id/seekBar1_Hard"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvUserPercentage1_hard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGoalPercentage1_hard" />
+
+    <TextView
+        android:id="@+id/tvTimeLeft_hard"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="15"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#B71C1C"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeLeftLabel2" />
+
+    <TextView
+        android:id="@+id/tvGoalPercentage3_hard"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#EF6C00"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserPercentage1_hard" />
+
+    <SeekBar
+        android:id="@+id/seekBar2_Hard"
+        android:layout_width="170dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="1dp"
+        android:rotation="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGoalPercentage2_hard" />
+
+    <TextView
+        android:id="@+id/tvGoalPercentage1_hard"
+        android:layout_width="132dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="144dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="42 %"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2E7D32"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="359dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="216dp"
+        android:rotation="45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="14dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_width="357dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="296dp"
+        android:rotation="-225"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar3_Hard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

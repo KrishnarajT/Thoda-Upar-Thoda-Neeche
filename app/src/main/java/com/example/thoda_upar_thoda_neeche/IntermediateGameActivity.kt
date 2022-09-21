@@ -23,6 +23,14 @@ class IntermediateGameActivity : AppCompatActivity() {
     private lateinit var tvTimeLeft: TextView
     private lateinit var seekBar1_inter: SeekBar
 
+
+    private lateinit var timer: CountDownTimer
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        timer.cancel()
+    }
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,31 +38,23 @@ class IntermediateGameActivity : AppCompatActivity() {
         Log.i(TAG, "Started easy game $difficulty")
 
         tvUserPercentage1_inter = findViewById(R.id.tvUserPercentage1_inter)
-//        tvUserPercentage2_inter = findViewById(R.id.tvUserPercentage2_inter)
-
         tvGoalPercentage1_inter = findViewById(R.id.tvGoalPercentage1_inter)
-//        tvGoalPercentage2_inter = findViewById(R.id.tvGoalPercentage2_inter)
 
         tvTimeLeft = findViewById(R.id.tvTimeLeft)
         seekBar1_inter = findViewById(R.id.seekBar1_inter)
-//        seekBar2_inter = findViewById(R.id.seekBar2_inter)
 
 
         assignRandomGoalPercentage()
 
         tvUserPercentage1_inter.text = "$initialSeekbar_1Percentage %"
-//        tvUserPercentage2_inter.text = "$initialSeekbar_1Percentage %"
 
         seekBar1_inter.max = 1000
         seekBar1_inter.progress = initialSeekbar_1Percentage
-//
-//        seekBar2_inter.max = 1000
-//        seekBar2_inter.progress = initialSeekbar_1Percentage
 
 
         val gameOverIntent = Intent(this, GameOver::class.java).apply {}
 
-        val timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
+        timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTimeLeft.text = (millisUntilFinished / 1000).toString()
             }

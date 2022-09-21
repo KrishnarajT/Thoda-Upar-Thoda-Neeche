@@ -40,6 +40,14 @@ class HardGame : AppCompatActivity() {
     private lateinit var seekBar3_hard: SeekBar
 
 
+
+    private lateinit var timer: CountDownTimer
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        timer.cancel()
+    }
+
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,15 +87,11 @@ class HardGame : AppCompatActivity() {
         seekBar3_hard.min = 0
         seekBar3_hard.max = finalSeekbar_3Percentage
 
-
-
-
-
         assignRandomGoalPercentage()
 
         val gameOverIntent = Intent(this, GameOver::class.java).apply {}
 
-        val timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
+        timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTimeLeft_hard.text = (millisUntilFinished / 1000).toString()
             }
