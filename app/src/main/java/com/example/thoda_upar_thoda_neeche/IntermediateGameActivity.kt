@@ -14,7 +14,7 @@ private const val TAG = "InterGameActivity"
 
 private const val initialSeekbar_1Percentage = 0
 
-private const val timeMaxValue = 15
+private const val timeMaxValue = 16
 
 
 class IntermediateGameActivity : AppCompatActivity() {
@@ -61,6 +61,7 @@ class IntermediateGameActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 gameResult = false
+                this.cancel()
                 startActivity(gameOverIntent)
             }
         }

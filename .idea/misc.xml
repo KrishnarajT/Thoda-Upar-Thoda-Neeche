@@ -6,8 +6,9 @@
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_game_easy.xml" value="0.30925925925925923" />
         <entry key="app/src/main/res/layout/activity_game_over.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/layout/activity_hard_game.xml" value="0.28559213339033773" />
         <entry key="app/src/main/res/layout/activity_insane_game.xml" value="0.34791666666666665" />
-        <entry key="app/src/main/res/layout/activity_intermediate_game.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/layout/activity_intermediate_game.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.28559213339033773" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.22567567567567567" />
