@@ -19,12 +19,9 @@ private const val timeMaxValue = 15
 
 class IntermediateGameActivity : AppCompatActivity() {
     private lateinit var tvUserPercentage1_inter : TextView
-    private lateinit var tvUserPercentage2_inter: TextView
     private lateinit var tvGoalPercentage1_inter : TextView
-    private lateinit var tvGoalPercentage2_inter: TextView
     private lateinit var tvTimeLeft: TextView
     private lateinit var seekBar1_inter: SeekBar
-    private lateinit var seekBar2_inter: SeekBar
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,21 +91,6 @@ class IntermediateGameActivity : AppCompatActivity() {
                 checkValue()
             }
         })
-//        seekBar2_inter.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
-//            @SuppressLint("SetTextI18n")
-//            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-//                Log.i(TAG, "onProgressChanged $p1")
-//                val user2val  = p1/10
-//                tvUserPercentage2_inter.text = "${user2val.toDouble()} %"
-//            }
-//
-//            override fun onStartTrackingTouch(p0: SeekBar?) {
-//            }
-//
-//            override fun onStopTrackingTouch(p0: SeekBar?) {
-//                checkValue()
-//            }
-//        })
 
 
     }
@@ -117,8 +99,6 @@ class IntermediateGameActivity : AppCompatActivity() {
     private fun assignRandomGoalPercentage() {
         val rounded1: Double = String.format("%.1f", Random.nextDouble(0.0, 100.0)).toDouble()
         tvGoalPercentage1_inter.text = "$rounded1 %"
-//        String.format("%.1f %", Random.nextDouble(0.0, 100.0))
-//        tvGoalPercentage2_inter.text = "${Random.nextInt(0, 100)} %"
     }
 
 

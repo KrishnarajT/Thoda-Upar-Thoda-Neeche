@@ -27,10 +27,30 @@ class MainActivity : AppCompatActivity() {
     }
     fun startIntermediateGame(view: View) {
         val interdiateIntent = Intent(this, IntermediateGameActivity::class.java).apply {
-            difficulty = "Easy"
+            difficulty = "Intermediate"
             putExtra(EXTRA_MESSAGE, difficulty)
         }
         startActivity(interdiateIntent)
+    }
+    fun startHardGame(view: View) {
+        val hardIntent = Intent(this, HardGame::class.java).apply {
+            difficulty = "Hard"
+            putExtra(EXTRA_MESSAGE, difficulty)
+        }
+        startActivity(hardIntent)
+    }
+    fun startInsaneGame(view: View) {
+        val insaneIntent = Intent(this, InsaneGame::class.java).apply {
+            difficulty = "Insane"
+            putExtra(EXTRA_MESSAGE, difficulty)
+        }
+        startActivity(insaneIntent)
+    }
+    fun startSettings(view: View) {
+        val settingsIntent = Intent(this, Settings::class.java).apply {
+            putExtra(EXTRA_MESSAGE, difficulty)
+        }
+        startActivity(settingsIntent)
     }
 
 }
