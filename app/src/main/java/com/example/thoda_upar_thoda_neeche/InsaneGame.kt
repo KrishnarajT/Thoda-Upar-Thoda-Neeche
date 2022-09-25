@@ -15,7 +15,7 @@ private const val TAG = "InsaneGameActivity"
 
 private const val initialSeekbar_1Percentage = 0
 
-private const val timeMaxValue = 200
+private const val timeMaxValue = 20
 
 class InsaneGame : AppCompatActivity() {
 
