@@ -18,19 +18,23 @@ private const val timeMaxValue = 15
 
 
 class EasyGameActivity : AppCompatActivity() {
-    private lateinit var tvGoalPercentage : TextView
+    private lateinit var tvGoalPercentage: TextView
     private lateinit var tvUserPercentage: TextView
     private lateinit var tvTimeLeft: TextView
     private lateinit var seekBar1: SeekBar
 
     private lateinit var timer: CountDownTimer
 
+
     override fun onBackPressed() {
         //this is only needed if you have specific things
         //that you want to do when the user presses the back button.
         /* your specific things...*/
-        super.onBackPressed()
+//        super.onBackPressed()
         timer.cancel()
+        this.finish()
+        val mainActivityIntent = Intent(this, MainActivity::class.java).apply {}
+        startActivity(mainActivityIntent)
     }
 
     @SuppressLint("SetTextI18n")
@@ -51,11 +55,9 @@ class EasyGameActivity : AppCompatActivity() {
         seekBar1.progress = initialSeekbar_1Percentage
 
 
-
-
         val gameOverIntent = Intent(this, GameOver::class.java).apply {}
 
-        timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
+        timer = object : CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTimeLeft.text = (millisUntilFinished / 1000).toString()
             }
@@ -63,13 +65,14 @@ class EasyGameActivity : AppCompatActivity() {
             override fun onFinish() {
                 gameResult = false
                 this.cancel()
+                EasyGameActivity().finish()
                 startActivity(gameOverIntent)
             }
         }
         timer.start()
 
         fun checkValue() {
-            if(tvUserPercentage.text == tvGoalPercentage.text) {
+            if (tvUserPercentage.text == tvGoalPercentage.text) {
                 Log.i(TAG, "correct")
                 gameResult = true
                 timer.cancel()
@@ -77,11 +80,12 @@ class EasyGameActivity : AppCompatActivity() {
             }
         }
 
-        seekBar1.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        seekBar1.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "onProgressChanged $p1")
                 tvUserPercentage.text = "$p1 %"
+//                playBgMusic()
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -94,11 +98,8 @@ class EasyGameActivity : AppCompatActivity() {
 
 
     }
-
     @SuppressLint("SetTextI18n")
     private fun assignRandomGoalPercentage() {
         tvGoalPercentage.text = "${Random.nextInt(0, 100)} %"
     }
-
-
 }

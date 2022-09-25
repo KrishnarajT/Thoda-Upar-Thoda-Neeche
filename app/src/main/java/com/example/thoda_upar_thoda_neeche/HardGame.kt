@@ -3,13 +3,13 @@ package com.example.thoda_upar_thoda_neeche
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
 private const val TAG = "HardGameActivity"
@@ -27,12 +27,12 @@ private const val timeMaxValue = 16
 class HardGame : AppCompatActivity() {
 
 
-    private lateinit var tvUserPercentage1_hard : TextView
-    private lateinit var tvGoalPercentage1_hard : TextView
-    private lateinit var tvUserPercentage2_hard : TextView
-    private lateinit var tvGoalPercentage2_hard : TextView
-    private lateinit var tvUserPercentage3_hard : TextView
-    private lateinit var tvGoalPercentage3_hard : TextView
+    private lateinit var tvUserPercentage1_hard: TextView
+    private lateinit var tvGoalPercentage1_hard: TextView
+    private lateinit var tvUserPercentage2_hard: TextView
+    private lateinit var tvGoalPercentage2_hard: TextView
+    private lateinit var tvUserPercentage3_hard: TextView
+    private lateinit var tvGoalPercentage3_hard: TextView
 
     private lateinit var tvTimeLeft_hard: TextView
     private lateinit var seekBar1_hard: SeekBar
@@ -40,12 +40,14 @@ class HardGame : AppCompatActivity() {
     private lateinit var seekBar3_hard: SeekBar
 
 
-
     private lateinit var timer: CountDownTimer
 
     override fun onBackPressed() {
-        super.onBackPressed()
+//        super.onBackPressed()
         timer.cancel()
+        this.finish()
+        val mainActivityIntent = Intent(this, MainActivity::class.java).apply {}
+        startActivity(mainActivityIntent)
     }
 
     @SuppressLint("SetTextI18n")
@@ -91,7 +93,7 @@ class HardGame : AppCompatActivity() {
 
         val gameOverIntent = Intent(this, GameOver::class.java).apply {}
 
-        timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
+        timer = object : CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTimeLeft_hard.text = (millisUntilFinished / 1000).toString()
             }
@@ -105,10 +107,10 @@ class HardGame : AppCompatActivity() {
         timer.start()
 
         fun checkValue() {
-            if( tvUserPercentage1_hard.text == tvGoalPercentage1_hard.text
+            if (tvUserPercentage1_hard.text == tvGoalPercentage1_hard.text
                 && tvUserPercentage2_hard.text == tvGoalPercentage2_hard.text
-                && tvUserPercentage3_hard.text == tvGoalPercentage3_hard.text)
-            {
+                && tvUserPercentage3_hard.text == tvGoalPercentage3_hard.text
+            ) {
                 Log.i(TAG, "correct")
                 gameResult = true
                 timer.cancel()
@@ -118,11 +120,11 @@ class HardGame : AppCompatActivity() {
         }
 
         // Seekbar Function Overloads
-        seekBar1_hard.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        seekBar1_hard.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "onProgressChanged $p1")
-                tvUserPercentage1_hard.text = "${p1.toDouble()/10} %"
+                tvUserPercentage1_hard.text = "${p1.toDouble() / 10} %"
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -134,11 +136,12 @@ class HardGame : AppCompatActivity() {
         })
 
 
-        seekBar2_hard.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        seekBar2_hard.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "onProgressChanged $p1")
-                tvUserPercentage2_hard.text = "${(p1 + initialSeekbar_2Percentage).toDouble()/10} %"
+                tvUserPercentage2_hard.text =
+                    "${(p1 + initialSeekbar_2Percentage).toDouble() / 10} %"
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -150,11 +153,12 @@ class HardGame : AppCompatActivity() {
         })
 
 
-        seekBar3_hard.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        seekBar3_hard.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "onProgressChanged $p1")
-                tvUserPercentage3_hard.text = "${(p1 + initialSeekbar_3Percentage).toDouble()/10} %"
+                tvUserPercentage3_hard.text =
+                    "${(p1 + initialSeekbar_3Percentage).toDouble() / 10} %"
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -164,8 +168,6 @@ class HardGame : AppCompatActivity() {
                 checkValue()
             }
         })
-
-
 
 
     }
@@ -176,15 +178,30 @@ class HardGame : AppCompatActivity() {
 
 
         tvUserPercentage1_hard.text = "${initialSeekbar_1Percentage.toDouble()} %"
-        tvUserPercentage2_hard.text = "${initialSeekbar_2Percentage.toDouble()/10} %"
-        tvUserPercentage3_hard.text = "${initialSeekbar_3Percentage.toDouble()/10} %"
+        tvUserPercentage2_hard.text = "${initialSeekbar_2Percentage.toDouble() / 10} %"
+        tvUserPercentage3_hard.text = "${initialSeekbar_3Percentage.toDouble() / 10} %"
 
 
-        val rounded1: String = String.format("%.1f", (Random.nextInt(initialSeekbar_1Percentage, finalSeekbar_1Percentage)).toDouble()/10)
+        val rounded1: String = String.format(
+            "%.1f",
+            (Random.nextInt(initialSeekbar_1Percentage, finalSeekbar_1Percentage)).toDouble() / 10
+        )
 
-        val rounded2: String = String.format("%.1f", (Random.nextInt(initialSeekbar_2Percentage, initialSeekbar_2Percentage + finalSeekbar_2Percentage)).toDouble()/10)
+        val rounded2: String = String.format(
+            "%.1f",
+            (Random.nextInt(
+                initialSeekbar_2Percentage,
+                initialSeekbar_2Percentage + finalSeekbar_2Percentage
+            )).toDouble() / 10
+        )
 
-        val rounded3: String = String.format("%.1f", (Random.nextInt(initialSeekbar_3Percentage, initialSeekbar_3Percentage + finalSeekbar_3Percentage)).toDouble()/10)
+        val rounded3: String = String.format(
+            "%.1f",
+            (Random.nextInt(
+                initialSeekbar_3Percentage,
+                initialSeekbar_3Percentage + finalSeekbar_3Percentage
+            )).toDouble() / 10
+        )
 
         tvGoalPercentage1_hard.text = "$rounded1 %"
         tvGoalPercentage2_hard.text = "$rounded2 %"

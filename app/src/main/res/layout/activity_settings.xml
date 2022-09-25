@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDE7F6"
     tools:context=".Settings">
+
+    <Switch
+        android:id="@+id/swMusicSwitch"
+        android:layout_width="345dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="112dp"
+        android:fontFamily="casual"
+        android:text="Background Music"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#1B5E20"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSettingsLabel"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/swSFX"
+        android:layout_width="345dp"
+        android:layout_height="53dp"
+        android:fontFamily="casual"
+        android:text="SFX"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#1B5E20"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/swMusicSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/swMusicSwitch"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/tvSettingsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/caesar_dressing"
+        android:text="settings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#1A237E"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

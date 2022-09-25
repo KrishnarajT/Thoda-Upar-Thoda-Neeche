@@ -18,8 +18,8 @@ private const val timeMaxValue = 16
 
 
 class IntermediateGameActivity : AppCompatActivity() {
-    private lateinit var tvUserPercentage1_inter : TextView
-    private lateinit var tvGoalPercentage1_inter : TextView
+    private lateinit var tvUserPercentage1_inter: TextView
+    private lateinit var tvGoalPercentage1_inter: TextView
     private lateinit var tvTimeLeft: TextView
     private lateinit var seekBar1_inter: SeekBar
 
@@ -27,8 +27,11 @@ class IntermediateGameActivity : AppCompatActivity() {
     private lateinit var timer: CountDownTimer
 
     override fun onBackPressed() {
-        super.onBackPressed()
+//        super.onBackPressed()
         timer.cancel()
+        this.finish()
+        val mainActivityIntent = Intent(this, MainActivity::class.java).apply {}
+        startActivity(mainActivityIntent)
     }
 
     @SuppressLint("SetTextI18n")
@@ -54,7 +57,7 @@ class IntermediateGameActivity : AppCompatActivity() {
 
         val gameOverIntent = Intent(this, GameOver::class.java).apply {}
 
-        timer = object: CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
+        timer = object : CountDownTimer((timeMaxValue * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTimeLeft.text = (millisUntilFinished / 1000).toString()
             }
@@ -69,7 +72,7 @@ class IntermediateGameActivity : AppCompatActivity() {
 
         @SuppressLint("LongLogTag")
         fun checkValue() {
-            if(tvUserPercentage1_inter.text == tvGoalPercentage1_inter.text){
+            if (tvUserPercentage1_inter.text == tvGoalPercentage1_inter.text) {
                 Log.i(TAG, "correct")
                 gameResult = true
                 timer.cancel()
@@ -78,11 +81,11 @@ class IntermediateGameActivity : AppCompatActivity() {
 
         }
 
-        seekBar1_inter.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        seekBar1_inter.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 Log.i(TAG, "onProgressChanged $p1")
-                tvUserPercentage1_inter.text = "${p1.toDouble()/10} %"
+                tvUserPercentage1_inter.text = "${p1.toDouble() / 10} %"
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {

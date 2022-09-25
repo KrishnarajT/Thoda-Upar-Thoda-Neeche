@@ -2,16 +2,24 @@ package com.example.thoda_upar_thoda_neeche
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock.sleep
-import android.provider.AlarmClock
 import android.view.View
 import android.widget.TextView
-import org.w3c.dom.Text
+import androidx.appcompat.app.AppCompatActivity
 
 class GameOver : AppCompatActivity() {
     private lateinit var tvGameOver: TextView
+
+    override fun onBackPressed() {
+        //this is only needed if you have specific things
+        //that you want to do when the user presses the back button.
+        /* your specific things...*/
+//        super.onBackPressed()
+        this.finish()
+        val mainActivityIntent = Intent(this, MainActivity::class.java).apply {}
+        startActivity(mainActivityIntent)
+    }
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +34,7 @@ class GameOver : AppCompatActivity() {
         }
     }
 
-    fun callMainActivity(view : View)
-    {
+    fun callMainActivity(view: View) {
         val mainActivityIntent = Intent(this, MainActivity::class.java).apply {}
         startActivity(mainActivityIntent)
     }
